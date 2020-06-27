@@ -1,0 +1,21 @@
+<table rules="all" ng-if="found.length>0" style="position:absolute;top:150px;border:2px solid black">
+        <tr>
+          <td>Id</td>
+          <td>Short Name</td>
+          <td>Name</td>
+          <td>Remove</td>
+          <td>Description</td>
+        </tr>
+        <tr ng-repeat="item in found track by $index">
+          <td>{{item.id}}</td>
+          <td>{{item.short_name}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.description}}</td>
+          <td><button ng-click='onRemove($index)'>Don't want this one</button></td>
+        </tr>
+
+  </table>
+  <div class="error" ng-if="found.length==0" style="font-size:20px;color:red;position:absolute;top:120px">
+    <br>
+    Not Found
+  </div>
