@@ -1,0 +1,14 @@
+<table rules="all" border="1px">
+    <tr>
+      <th>Id</th>
+      <th>Short Name</th>
+      <th>Price</th>
+      <th>Description</th>
+    </tr>
+    <tr ng-repeat="item in itemDetail.items">
+      <td>{{item.id}}</td>
+      <td>{{item.short_name}}</td>
+      <td>{{item.price_large}}</td>
+      <td>{{item.description}}</td>
+    </tr>
+</table>
