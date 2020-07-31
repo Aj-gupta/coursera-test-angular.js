@@ -1,0 +1,47 @@
+<fieldset>
+      <legend style="color:floralwhite">Subsribe For Newsletter</legend>
+      <form name='regForm' novalidate>
+        <label>First Name</label>
+        <input class="form-control" type="text" name="firstname"
+          ng-model="signup.user.firstname"
+          required>
+          <span
+            ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
+            First Name Required
+          </span>
+          <br>
+
+          <label>Last Name</label>
+          <input class="form-control" type="text" name="lastname"
+            ng-model="signup.user.lastname"
+            required>
+            <span
+              ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
+              Last Name Required
+            </span>
+            <br>
+             <label>E-Mail</label>
+        <input class="form-control" type="email" name="email" placeholder="Email"
+          ng-model="signup.user.email"
+          required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+          <label>Mobile Number:</label>
+        <input class="form-control" type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="signup.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+          <label>Your Favorite Dish short-name</label>
+          <input class="form-control" type="text" name="favdish"
+            ng-model="signup.user.favdish">
+            <br>
+        <button
+          ng-disabled="regForm.$invalid"
+          ng-click="signup.submit()" class="btn btn-info">Submit</button>
+      </form>
+    </fieldset>

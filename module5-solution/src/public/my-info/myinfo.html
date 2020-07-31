@@ -1,0 +1,17 @@
+<div class="container" ng-if="myinf.user.firstname">
+<dl >
+  Welcome to my restaurant
+  <dt>First Name:</dt>
+  <dd>{{myinf.user.firstname}}</dd>
+  <dt>Last Name:</dt>
+  <dd>{{myinf.user.lastname}}</dd>
+  <dt>E-mail</dt>
+  <dd>{{myinf.user.email}}</dd>
+  <dt>phone</dt>
+  <dd>{{myinf.user.phone}}</dd>
+</dl>
+<h3>Here is your favorite dishes</h3>
+<menu-item ng-repeat="menuItem in myinf.user.data"
+           menu-item="menuItem">
+</menu-item>
+</div>
